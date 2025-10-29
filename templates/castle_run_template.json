@@ -1,0 +1,66 @@
+{
+  "template_name": "castle_run",
+  "description": "A short hero clip that calls the viewer by name and rallying cry using configurable variables.",
+  "variables": {
+    "VAR_NAME": {
+      "description": "Name of the viewer that the hero speaks to",
+      "example": "Alex"
+    },
+    "VAR_LOCATION": {
+      "description": "Place the hero and viewer must reach",
+      "default": "the castle gates"
+    },
+    "VAR_TEAM": {
+      "description": "Team, guild, or group name to cheer for",
+      "default": "Dragon Flyers"
+    }
+  },
+  "video": {
+    "resolution": [1280, 720],
+    "duration": 6.0,
+    "background_color": "#1B1F3B",
+    "fps": 24
+  },
+  "text_layers": [
+    {
+      "id": "hero_line",
+      "template": "HERO: \"[VAR_NAME], we have to get to [VAR_LOCATION]!\"",
+      "start": 0.5,
+      "end": 3.4,
+      "position": "center",
+      "font_size": 64,
+      "color": "#F4F4F8"
+    },
+    {
+      "id": "cta",
+      "template": "FOR [VAR_TEAM], WE RIDE!",
+      "start": 3.6,
+      "end": 5.8,
+      "position": "bottom",
+      "font_size": 70,
+      "color": "#FFD166"
+    }
+  ],
+  "caption_tracks": [
+    {
+      "id": "hero_caption",
+      "template": "[VAR_NAME], we have to get to [VAR_LOCATION]!",
+      "start": 0.5,
+      "end": 3.4
+    },
+    {
+      "id": "cta_caption",
+      "template": "For [VAR_TEAM], we ride!",
+      "start": 3.6,
+      "end": 5.8
+    }
+  ],
+  "audio_segments": [
+    {
+      "id": "name_ping",
+      "template": "[VAR_NAME]",
+      "start": 0.5,
+      "generator": "tone_from_text"
+    }
+  ]
+}

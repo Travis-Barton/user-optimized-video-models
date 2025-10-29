@@ -75,3 +75,14 @@ If >70% prefer the personalized clip and <20% describe it as “creepy,” proce
 - Variable‑filled templates **scale the intimacy of friendship** while avoiding the creepiness of likeness modeling.
 - This approach reframes generative video as *contextual mirroring* rather than *identity cloning* — which is both safer and emotionally truer.
 
+
+---
+
+## MVP implementation in this repo
+- `templates/castle_run_template.json` captures the variable anchors, timing, and
+display metadata for the hero clip described above.
+- `scripts/personalize_video.py` acts as the viewer-side filler: it resolves
+  `[VAR_*]` tokens, composites lightweight overlays locally, and exports a
+  personalized `.mp4` plus captions.
+- `outputs/` (git-ignored) is where demo renders land; use the CLI documented in
+  `README.md` to try a name/location/team of your choice.
